@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\BoardController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -11,6 +12,10 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'BoardController@index');
+Route::get('/boards/create', 'BoardController@create');
+Route::post('/boards', 'BoardController@store');
+Route::get('/boards/{board}', 'BoardController@show');
+Route::delete('/boards/{board}', 'BoardController@delete');
+Route::get('/shifts', 'ShiftController@index');
+
