@@ -12,10 +12,15 @@ use App\Http\Controllers\BoardController;
 |
 */
 
-Route::get('/', 'BoardController@index');
-Route::get('/boards/create', 'BoardController@create');
-Route::post('/boards', 'BoardController@store');
-Route::get('/boards/{board}', 'BoardController@show');
-Route::delete('/boards/{board}', 'BoardController@delete');
-Route::get('/shifts', 'ShiftController@index');
+Route::group(['middleware' => ['auth']], function(){
+    Route::get('/', 'BoardController@index');
+    Route::get('/boards/create', 'BoardController@create');
+    Route::post('/boards', 'BoardController@store');
+    Route::get('/boards/{board}', 'BoardController@show');
+    Route::delete('/boards/{board}', 'BoardController@delete');
+    Route::get('/shifts', 'ShiftController@index');
+});
 
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

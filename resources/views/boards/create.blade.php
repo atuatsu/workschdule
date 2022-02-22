@@ -13,15 +13,10 @@
         <form action="/boards" method="POST">
             @csrf
             <div class="user">
-                <h1>名前</h1>
-                <select name="board[user_id]">
-                    @foreach($users as $user)
-                        <option value="{{ $user->id }}">{{ $user->name }}</option>
-                    @endforeach
-                </select>
+                <p class="user">{{Auth::user()->name}}</p>
             </div>
             <div class="body">
-                <h2>連絡事項</h2>
+                <h1>連絡事項</h1>
                 <textarea name="board[body]"></textarea>
             </div>
             <input type="submit" value="保存"/>

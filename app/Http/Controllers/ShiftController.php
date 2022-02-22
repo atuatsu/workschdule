@@ -10,7 +10,8 @@ class ShiftController extends Controller
 {
     public function index(Shift $shift)
     {
-        $date = new DateTime('2017-08-21 16:44:44');
+        $date = new DateTime();
         return $shift->getByWeek($date);
+        return view('shifts/index')->with(['shifts' => $shift->get()]);
     }
 }
