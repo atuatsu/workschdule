@@ -2,8 +2,8 @@
 @section('content')
 <h1>ココス福重店</h1>
 <div class='shifts'>
-    <a herf="">[シフト提出]</a>
-    <a herf="">[シフト一覧]</a>
+    <a href="/shifts/select">[シフト提出]</a>
+    <a href="">[シフト一覧]</a>
 </div>
 <div class="boards">
     <h2>連絡事項</h2>

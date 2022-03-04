@@ -19,6 +19,9 @@ Route::group(['middleware' => ['auth']], function(){
     Route::get('/boards/{board}', 'BoardController@show');
     Route::delete('/boards/{board}', 'BoardController@delete');
     Route::get('/shifts', 'ShiftController@index');
+    Route::get('shifts/create', 'ShiftController@create');
+    Route::post('/shifts', 'ShiftController@store');
+    Route::get('shifts/select', 'ShiftController@select');
 });
 
 Auth::routes();

@@ -16,21 +16,28 @@ class UsersTableSeeder extends Seeder
             'name' => '相葉雅紀',
             'position' => 'ホール',
             'email' => 'masaki@au.com',
-            'password' => 'masakimasaki',
+            'password' => bcrypt('masakimasaki'),
         ]);
         DB::table('users')->insert([
             'id' => 2,
             'name' => '松本潤',
             'position' => 'ホール',
             'email' => 'au@au.com',
-             'password' => 'jyunjyun',
+             'password' => bcrypt('jyunjyun')
         ]);
         DB::table('users')->insert([
             'id' => 3,
             'name' => '二宮和也',
             'position' => 'キッチン',
             'email' => 'softbank@.com',
-            'password' => 'kazunarikazunari',
+            'password' => bcrypt('kazunarikazunari'),
+        ]);
+        DB::table('users')->insert([
+            'id' => 4,
+            'name' => '花瀬敦',
+            'position' => 'キッチン',
+            'email' => 'atsushi2427@icloud.com',
+            'password' => bcrypt('Atsutsu08'),
         ]);
     }
 }

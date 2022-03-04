@@ -24,6 +24,7 @@ class BoardController extends Controller
     public function store(Request $request, Board $board)
     {
        $input = $request['board'];
+       $input['user_id'] = Auth::id();
        $board->fill($input)->save();
        return redirect('/');
     }

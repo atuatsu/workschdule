@@ -18,7 +18,7 @@ class CreateShiftsTable extends Migration
             $table->date('date');
             $table->time('start');
             $table->time('end');
-            $table->string('comment');
+            $table->string('comment')->nullable();
             $table->softDeletes();
             $table->integer('user_id')->unsigned();
         });
